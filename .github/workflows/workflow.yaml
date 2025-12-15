@@ -74,5 +74,6 @@ jobs:
       #       kill $PID
 
        - name: "Display Env Output"
-         run: echo ${{needs.build.outputs.env_out}}
+         run: |
+            echo "${{needs.build.outputs.env_out}}"
         
