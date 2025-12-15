@@ -37,7 +37,7 @@ jobs:
 
       - name: "Register Output"
         id: "out"
-        run: echo "env=${env}" >> $GITHUB_OUTPUT
+        run: echo "env=${message}" >> $GITHUB_OUTPUT
 
       - name: "Display Registered Output"
         run: echo ${{steps.out.outputs.env}}
