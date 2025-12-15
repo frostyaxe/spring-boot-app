@@ -13,7 +13,7 @@ jobs:
     steps:
 
       - name: "Display Message"
-        run: "echo Initiating Build : ${{github.run_number}} for the environment :: ${name}"
+        run: "echo Initiating Build : ${{github.run_number}} for the environment :: ${NAME}"
 
       # - name: "Checkout Code"
       #   uses: actions/checkout@v6
