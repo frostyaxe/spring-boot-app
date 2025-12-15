@@ -4,6 +4,7 @@ on:
     branches: ["master"]
 jobs:
   build:
+    environment: dev
     env:
       message: "Message from build"
     outputs:
@@ -12,7 +13,7 @@ jobs:
     steps:
 
       - name: "Display Message"
-        run: "echo Initiating Build : ${{github.run_number}}"
+        run: "echo Initiating Build : ${{github.run_number}} for the environment :: ${NAME}"
 
       # - name: "Checkout Code"
       #   uses: actions/checkout@v6
@@ -37,10 +38,13 @@ jobs:
 
       - name: "Register Output"
         id: "out"
+
         run: echo "env=${message}" >> $GITHUB_OUTPUT
 
       - name: "Display Registered Output"
         run: echo ${{steps.out.outputs.env}}
+
+    
 
       
 
