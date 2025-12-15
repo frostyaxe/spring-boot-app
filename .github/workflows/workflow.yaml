@@ -18,7 +18,7 @@ jobs:
           distribution: "temurin"
           java-version: '21'
           cache: 'maven'
-          
+
       - name: "Build With Maven"
         run: "mvn -Dskiptests clean package"
 
@@ -27,3 +27,20 @@ jobs:
         with:
           name: build-output
           path: target/spring-boot-0.0.1-SNAPSHOT.jar
+
+  test:
+    runs-on: ["ubuntu-latest"]
+    steps:
+       - name: "Download Artifact"
+         uses: actions/download-artifact@v4
+         with: 
+            name: build-output
+
+       - name: "Test Application Run"
+         run: |
+            java -jar spring-boot-0.0.1-SNAPSHOT.jar &
+            PID=$!
+            sleep 15
+            curl http://localhost:8080/actuator/health
+            kill $PID
+        
