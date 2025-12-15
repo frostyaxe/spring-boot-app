@@ -1,0 +1,10 @@
+name: "Maven Application Pipeline"
+on:
+  push:
+    branches: ["master"]
+jobs:
+  build:
+    runs-on: ["ubuntu-latest"]
+    steps:
+      - name: "Display Message"
+        run: "echo Initiating Build : ${github.build_number}"
