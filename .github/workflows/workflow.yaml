@@ -17,3 +17,5 @@ jobs:
         with:
           distribution: "temurin"
           java-version: '21'
+      - name: "Build With Maven"
+        run: "mvn -Dskiptests clean package"
