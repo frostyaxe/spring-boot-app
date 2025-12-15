@@ -8,3 +8,12 @@ jobs:
     steps:
       - name: "Display Message"
         run: "echo Initiating Build : ${{github.run_number}}"
+      - name: "Checkout Code"
+        uses: actions/checkout@v6
+        with:
+          ref: master
+      - name: "Maven Setup"
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version: '21'
