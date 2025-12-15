@@ -15,6 +15,9 @@ jobs:
       - name: "Display Message"
         run: "echo Initiating Build : ${{github.run_number}} for the environment :: ${{vars.NAME}}"
 
+      - name: "Display Github Context"
+        run: echo $GITHUB
+
       # - name: "Checkout Code"
       #   uses: actions/checkout@v6
       #   with:
