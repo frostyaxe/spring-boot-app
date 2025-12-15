@@ -16,7 +16,7 @@ jobs:
         run: "echo Initiating Build : ${{github.run_number}} for the environment :: ${{vars.NAME}}"
 
       - name: "Display Github Context"
-        run: echo ${{tojson(github)}}
+        run: echo '${{toJson(github)}}''
 
       # - name: "Checkout Code"
       #   uses: actions/checkout@v6
