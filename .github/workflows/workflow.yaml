@@ -7,4 +7,4 @@ jobs:
     runs-on: ["ubuntu-latest"]
     steps:
       - name: "Display Message"
-        run: "echo Initiating Build : ${github.build_number}"
+        run: "echo Initiating Build : ${{github.build_number}}"
