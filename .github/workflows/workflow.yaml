@@ -17,5 +17,13 @@ jobs:
         with:
           distribution: "temurin"
           java-version: '21'
+          cache: 'maven'
+          
       - name: "Build With Maven"
         run: "mvn -Dskiptests clean package"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: target/spring-boot-0.0.1-SNAPSHOT.jar
