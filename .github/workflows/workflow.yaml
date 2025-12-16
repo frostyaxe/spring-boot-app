@@ -8,6 +8,7 @@ on:
         description: "Name of the user"
         required: True
         default: "frostyaxe"
+        
 jobs:
   build:
     environment: dev
