@@ -9,5 +9,7 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: "Checkout Code"
+      uses: actions/checkout@v6
     - name: "Display Greeting"
       run: "echo ${name}"
