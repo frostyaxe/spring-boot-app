@@ -47,6 +47,11 @@ jobs:
       - name: "Display Registered Output"
         run: echo ${{steps.out.outputs.env}}
 
+      - name: "custom action usage"
+        uses: ./.github/actions
+        with: 
+           name: Abhishek Prajapati
+
     
 
       
