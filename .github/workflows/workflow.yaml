@@ -8,7 +8,7 @@ on:
         description: "Name of the user"
         required: True
         default: "frostyaxe"
-        
+
 jobs:
   build:
     environment: dev
@@ -58,6 +58,11 @@ jobs:
         uses: ./.github/actions
         with: 
            name: Abhishek Prajapati
+      
+      - name: "Cleanup"
+        if: ${{always()}}
+        run: |
+          echo "Cleanup will be done here"
 
     
 
