@@ -10,5 +10,5 @@ runs:
   using: composite
   steps:
     - name: "Display Greeting"
-      run: "echo ${name}"
+      run: "echo ${{inputs.name}}"
       shell: bash
