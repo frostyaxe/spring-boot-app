@@ -18,10 +18,10 @@ jobs:
       - name: "Display Github Context"
         run: echo '${{toJson(github)}}'
 
-      # - name: "Checkout Code"
-      #   uses: actions/checkout@v6
-      #   with:
-      #     ref: master
+      - name: "Checkout Code"
+        uses: actions/checkout@v6
+        with:
+          ref: master
 
       # - name: "Maven Setup"
       #   uses: actions/setup-java@v5
